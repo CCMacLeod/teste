@@ -83,12 +83,13 @@
                                     @endif
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="vehicle_list">
                                 @foreach($vehicles as $vehicle)
                                     <tr data-id="{{$vehicle->id}}">
-                                        <td>{{$vehicle->plate}}</td>
-                                        <td>{{$vehicle->brand}}</td>
-                                        <td>{{$vehicle->model}}</td>
+                                        <td class="vehicle-plate">{{$vehicle->plate}}</td>
+                                        <td class="vehicle-brand">{{$vehicle->brand}}</td>
+                                        <td class="vehicle-model">{{$vehicle->model}}</td>
+
                                         <td>
                                             <button class="vehicle-view btn btn-sm btn-light"><span class="oi oi-eye"></span></button>
                                             @if(isAdmin())

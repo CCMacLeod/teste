@@ -3,8 +3,10 @@
 namespace FederalSt\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use FederalSt\Vehicle;
 
-class HomeController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $customer = Auth::user();
+        $vehicles = Vehicle::where('owner', $customer->id)->get();
+
+        return view('customer_profile', ['customer' => $customer, 'vehicles' => $vehicles]);
     }
 }
