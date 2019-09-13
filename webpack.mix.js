@@ -11,5 +11,13 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/assets/js/app.js', 'public/js')
+mix
+    .copy('node_modules/mustache/mustache.min.js', 'public/vendor')
+    .copy('node_modules/jquery-mask-plugin/dist/jquery.mask.min.js', 'public/vendor')
+    .copy('node_modules/jquery-validation/dist/jquery.validate.min.js', 'public/vendor')
+    .copy('node_modules/jquery-validation/dist/localization/messages_pt_BR.min.js', 'public/vendor')
+	.copy('resources/assets/js/helpers.js', 'public/js')
+    .copy('resources/assets/js/customer.js', 'public/js');
+   
+mix.js('resources/assets/js/app.js', 'public/js')  
    .sass('resources/assets/sass/app.scss', 'public/css');

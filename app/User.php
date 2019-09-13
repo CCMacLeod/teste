@@ -5,6 +5,7 @@ namespace FederalSt;
 use FederalSt\Notifications\MyResetPasswordNotification;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use phpDocumentor\Reflection\Types\Self_;
 
 class User extends Authenticatable
 {
@@ -39,5 +40,13 @@ class User extends Authenticatable
         $this->notify(new MyResetPasswordNotification($token));
     }
 
-
+    /**
+     * Customer list
+     *
+     * @return array
+     */
+    public static function customers()
+    {
+        return self::where('role', self::ROLE_USER)->get();
+    }
 }

@@ -31,4 +31,11 @@ Route::group(['prefix'=>'admin', 'as'=>'admin.'],function(){
     $this->post('password/reset','Auth\ResetPasswordController@reset');
 
     $this->get('/home', 'AdminController@index')->name('home');
+    $this->get('/customer/{id}','AdminController@customer');
+
+    Route::group(['prefix'=>'vehicle'], function (){
+        $this->post('add','AdminController@add');
+        $this->post('update','AdminController@update');
+        $this->post('remove','AdminController@remove');
+    });
 });
