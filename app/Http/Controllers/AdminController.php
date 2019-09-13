@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use FederalSt\Http\Requests\StoreVehicle;
 use FederalSt\Http\Requests\UpdateVehicle;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use FederalSt\Events\VehicleLog;
 use FederalSt\User;
 use FederalSt\Vehicle;
 
@@ -48,6 +50,12 @@ class AdminController extends Controller
         try {
             $vehicle = Vehicle::create($request->all());
 
+            $action = trans('core.added');
+            $admin = Auth::user();
+            $customer = User::find($request->input('owner'));
+
+            event(new VehicleLog($action, $admin, $customer, $vehicle));
+
             return Response::json(['status' => true, 'messages' => trans('core.save_success'), 'vehicle' => $vehicle->toJson()],200);
         } catch (\Exception $exception) {
             Log::error("AdminController@add: " . $exception->getMessage());
@@ -68,8 +76,15 @@ class AdminController extends Controller
             $vehicle->color = $data->color;
             $vehicle->year = $data->year;
 
-            if($vehicle->save())
+            if($vehicle->save()){
+                $action = trans('core.updated');
+                $admin = Auth::user();
+                $customer = User::find($vehicle->owner);
+
+                event(new VehicleLog($action, $admin, $customer, $vehicle));
+
                 return Response::json(['status' => true, 'messages' => trans('core.save_success')],200);
+            }
             else
                 return Response::json(['status' => false, 'messages' => trans('core.save_fail')],200);
 
@@ -85,8 +100,14 @@ class AdminController extends Controller
             $vehicle_id = $request->input('vehicle_id');
             $vehicle = Vehicle::where('id',$vehicle_id)->first();
 
-            if($vehicle->delete())
+            if($vehicle->delete()){
+                $action = trans('core.deleted');
+                $admin = Auth::user();
+                $customer = User::find($vehicle->owner);
+
+                event(new VehicleLog($action, $admin, $customer, $vehicle));
                 return Response::json(['status' => true, 'messages' => trans('core.remove_success')],200);
+            }
             else
                 return Response::json(['status' => false, 'messages' => trans('core.remove_fail')],200);
         } catch (\Exception $exception) {

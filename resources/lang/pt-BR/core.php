@@ -36,4 +36,8 @@ return [
 
     'remove_success'    => 'Removido com sucesso!',
     'remove_fail'       => 'Ocorreu uma falha ao remover :(',
+
+    'added'   => 'Adicionou',
+    'updated' => 'Modificou',
+    'deleted' => 'Removeu'
 ];
