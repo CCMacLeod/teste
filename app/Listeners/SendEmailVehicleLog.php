@@ -28,6 +28,10 @@ class SendEmailVehicleLog
      */
     public function handle(VehicleLog $event)
     {
-        $event->customer->notify(new CustomerNotification($event->adminName,$event->adminEmail, $event->getSubject(), $event->getMessage()));
+        try {
+            $event->customer->notify(new CustomerNotification($event->adminName,$event->adminEmail, $event->getSubject(), $event->getMessage()));
+        }catch (\Exception $exception) {
+            Log::error("Listeners SendEmailVehicleLog" . $exception->getMessage());
+        }
     }
 }
