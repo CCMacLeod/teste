@@ -8,8 +8,7 @@
 /.vagrant
 Homestead.json
 Homestead.yaml
-npm-debug.log
-yarn-error.log
+*.log
 .env
 _ide_helper.php
 .phpstorm.meta.php

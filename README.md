@@ -3,6 +3,16 @@
 
 # Teste prático - Federal Soluções Técnicas
 
+## Instalação 
+* Execute composer install
+* Execute npm install && npm run dev
+* Renomei o arquivo .env.example para .env
+* Configure o acesso do seu banco de dados postgree no arquivo .env
+* Configure APP_NAME do arquivo .env para FederalSt
+* Execute php artisan migrate
+* Execute php artisan db:seed
+* Execute php artisan serve
+
 Esse é o teste prático - Federal Soluções Técnicas.
 
 # Objetivos
@@ -78,3 +88,4 @@ Entre em contato conosco, caso você tenha alguma dúvida ou quando terminar o p
 - Você tem 2 dias pra realizar esse teste prático.
 
 ## SUBMETA SEU PROJETO, MESMO QUE VOCÊ NÃO O TERMINE. NESTE CASO, NOS EXPLIQUE QUAIS FORAM AS SUAS DIFICULDADES. 
+
