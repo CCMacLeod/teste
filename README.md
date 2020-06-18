@@ -8,6 +8,7 @@ Esse é o teste prático - Federal Soluções Técnicas
 # Objetivos
   - Conhecer as habilidades em:
     - Programação PHP/Laravel (Conhecimentos básicos sobre Laravel)
+    - Conhecimentos com PostgreSql
     - Organização (código/arquivos)
     - Controle de versão
     - Análise/Entendimento de requisitos
