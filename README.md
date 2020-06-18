@@ -10,7 +10,7 @@ Esse é o teste prático - Federal Soluções Técnicas
     - Programação PHP/Laravel (Conhecimentos básicos sobre Laravel)
     - Conhecimentos com PostgreSql
     - Organização (código/arquivos)
-    - Controle de versão
+    - Controle de versão(GIT)
     - Análise/Entendimento de requisitos
     - Capacidade de cumprir prazos
     - Determinação na busca novos conhecimentos
