@@ -31,8 +31,11 @@ O administrador do sistema deverá realizar a manutenção dos veículos. Os dad
  - Proprietário
  
 Todas as vezes que um veículo for cadastrado ou editado, deverá ser enviado um e-mail para o proprietário.
+
 O e-mail do proprietário deverá ser buscado na tabela de usuários.
+
 O CRUD do veículo deverá ficar em uma área de administração. O proprietário não poderá ter acesso a essa área.
+
 Deverá haver uma área destinada ao proprietário. O proprietário deverá ser capaz de visualizar todos os seus veículos. Ele não pode editar, excluir ou cadastrar novos veículos, apenas visualizar.
 
 ### Usuários
