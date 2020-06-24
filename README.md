@@ -68,6 +68,12 @@ Os campos abaixo só podem ser aceitos no formato:
 - Placa: Formato com três letras e quatro números (AAA1111).
 - Ano: Formato apenas com números com, no máximo, 4 dígitos.
 
+### Consultas SQL
+É necessário enviar, por e-mail, duas consultas SQL
+
+- Buscar todos os veículos onde o proprietário tenho a letra “e” no nome e o veículo tenha o número 7 na placa.
+- Buscar todos os veículos onde o proprietário não esteja removido e que o ano seja maior que 2010.
+
 ### Como participar?
 - Fazer o fork desse repositório.
 - Nos enviar o link do projeto do Github.
@@ -80,7 +86,7 @@ Os campos abaixo só podem ser aceitos no formato:
 
 # Contato
 - Email: suporte@federalst.com.br
-- Telefone: 62 3928-5910 
+- Telefone: 62 3414-9089
 
 Entre em contato conosco, caso você tenha alguma dúvida ou quando terminar o projeto.
 
